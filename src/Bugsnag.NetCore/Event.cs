@@ -66,7 +66,7 @@ namespace Bugsnag.NetCore
         {
             // Record a full notify stack trace if the exception has none (ignoring the first constructor stack frame)
             if (exception == null || exception.StackTrace == null)
-                CallTrace = exception.StackTrace;
+                CallTrace = Environment.StackTrace;
 
             Intialise(exception, false);
         }
@@ -80,7 +80,7 @@ namespace Bugsnag.NetCore
         {
             // Record a full notify stack trace if the exception has none (ignoring the first constructor stack frame)
             if (exception == null || exception.StackTrace == null)
-                CallTrace = exception.StackTrace;
+                CallTrace = Environment.StackTrace;
 
             Intialise(exception, runtimeEnding);
         }

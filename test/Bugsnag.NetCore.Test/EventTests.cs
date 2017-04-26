@@ -26,7 +26,7 @@ namespace Bugsnag.NetCore.Test
             Assert.NotNull(actEvent.CallTrace);
 #if DEBUG
             // We can only be certain of this frame when in Debug mode. Optimisers are enabled in Release mode 
-            Assert.Contains("Constructor_CallStackIsRecordedIfStackTraceNotPresent", actEvent.Exception.StackTrace);
+            Assert.Contains("Constructor_CallStackIsRecordedIfStackTraceNotPresent", actEvent.CallTrace);
 #endif
         }
 
@@ -47,7 +47,7 @@ namespace Bugsnag.NetCore.Test
             Assert.NotNull(actEvent.CallTrace);
 #if DEBUG
             // We can only be certain of this frame when in Debug mode. Optimisers are enabled in Release mode
-            Assert.Contains("Constructor_CallStackIsRecordedWhenThereIsNoException", actEvent.Exception.StackTrace);
+            Assert.Contains("Constructor_CallStackIsRecordedWhenThereIsNoException", actEvent.CallTrace);
 #endif
         }
 

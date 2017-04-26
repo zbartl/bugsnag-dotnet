@@ -161,7 +161,7 @@ namespace Bugsnag.NetCore.Clients
         /// <param name="configStorage">The configuration to use</param>
         protected void Initialize(BugsnagSettings config)
         {
-            if (config == null || string.IsNullOrEmpty(config.ApiKey)) //|| !apiRegex.IsMatch(config.ApiKey))
+            if (config == null || string.IsNullOrEmpty(config.ApiKey) || !apiRegex.IsMatch(config.ApiKey))
             {
                 Logger.Error("You must provide a valid Bugsnag API key");
                 throw new ArgumentException("You must provide a valid Bugsnag API key");

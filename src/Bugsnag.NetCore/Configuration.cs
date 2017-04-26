@@ -158,10 +158,14 @@ namespace Bugsnag.NetCore
             set { Settings.MetadataFilters = value; }
         }
 
-        public bool StoreOfflineErrors
-        {
-            get { return Settings.StoreOfflineErrors; }
-            set { Settings.StoreOfflineErrors = value; }
+        public bool StoreOfflineErrors
+
+        {
+
+            get { return Settings.StoreOfflineErrors; }
+
+            set { Settings.StoreOfflineErrors = value; }
+
         }
         #endregion
 
@@ -202,8 +206,8 @@ namespace Bugsnag.NetCore
         /// </summary>
         /// <param name="apiKey">The API key linked to a Bugsnag account</param>
         public Configuration(string apiKey)
+            : this(new BugsnagSettings { ApiKey = apiKey })
         {
-            Settings = new BugsnagSettings { ApiKey = apiKey };
         }
 
         ///// <summary>
